@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="" id="csp-meta-tag" />
+    <script>
+      let csp = ''
+      if (window.self !== window.top) {
+        // We're in an iframe, do not allow access to 'self' to ban scripts from hitting our backend.
+        csp = "default-src 'none'; script-src http://localhost:9338; connect-src http://localhost:9338;";
+      } else {
+        // We're not in an iframe, use an extremely restrictive CSP.
+        csp = "default-src 'self'; script-src 'self'; frame-src 'self';"
+      }
+      // Initialize the CSP.
+      document.getElementById('csp-meta-tag').setAttribute('content', csp)
+    </script>
+    <script src="http://localhost:9338/analytics.js"></script>
+    <script src="/public/index.js"></script>
+  </head>
+  <body>
+    <div>
+      <a href="/" data-nav>Home</a>
+      <a href="/about" data-nav>About</a>
+    </div>
+    <div id="current-path"></div>
+    <div id="output">
+      Waiting for API responses...<br />
+    </div>
+    <script src="/public/analytics_iframe.js"></script>
+  </body>
+</html>
