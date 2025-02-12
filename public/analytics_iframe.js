@@ -3,5 +3,6 @@ if (window.self === window.top) {
   const iframe = document.createElement('iframe')
   iframe.src = window.location.pathname
   iframe.width = 500
+  iframe.sandbox = 'allow-scripts'
   document.body.appendChild(iframe)
 }

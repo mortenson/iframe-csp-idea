@@ -28,7 +28,7 @@ appMain.listen(portMain, () => {
 const appAnalytics = express()
 
 appAnalytics.use(function(req, res, next) {
-  res.setHeader('Access-Control-Allow-Origin', `http://localhost:${portMain}`)
+  res.setHeader('Access-Control-Allow-Origin', '*')
   next()
 })
 

@@ -17,3 +17,6 @@ window.addEventListener('load', () => {
   // Purely for visualizing location changes.
   document.getElementById('current-path').innerText = `Current path: ${window.location.pathname}`
 })
+
+// Attempt to modify parent window.
+parent.document.body.innerText = "Modified parent window"

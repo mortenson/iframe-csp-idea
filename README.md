@@ -22,3 +22,8 @@ better to leave that to the implementer.
 1. Run `npm install`
 2. Run `npm start`
 3. Visit http://localhost:9337
+
+## Notes
+
+Analytics backends will need to allow all domains via CORS, since the iframe
+has a unique (`null`) origin.
